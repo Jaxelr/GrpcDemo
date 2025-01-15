@@ -1,0 +1,26 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package sign;
+
+service Sign {
+  rpc SignDigest (SignRequest) returns (SignReply);
+  rpc HashDigest (SignRequest) returns (HashReply);
+}
+
+message SignRequest {
+  string account = 1;
+  string profile = 2;
+  string digest = 3;
+}
+
+message SignReply {
+  string responseMessage = 1;
+  string signature = 2;
+}
+
+message HashReply {
+  string responseMessage = 1;
+  string hash = 2;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcBackendService";
+
+package sign;
+
+service Sign {
+  rpc SignDigest (SignRequest) returns (SignReply);
+  rpc HashDigest (SignRequest) returns (HashReply);
+}
+
+message SignRequest {
+  string account = 1;
+  string profile = 2;
+  string digest = 3;
+}
+
+message SignReply {
+  string responseMessage = 1;
+  string signature = 2;
+  google.protobuf.Timestamp executionTime = 3;
+}
+
+message HashReply {
+  string responseMessage = 1;
+  string hash = 2;
+  google.protobuf.Timestamp executionTime = 3;
+}

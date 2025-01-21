@@ -1,5 +1,7 @@
 ﻿# Benchmark results for GRPC operation vs HTTP Client operation (from localhost)
 
+Dont take this benchmarks as gospel, they are just a simple comparison of the performance of GRPC vs HTTP Client in a simple operation. Note: HttpClient is incorrectly used, see here for [proper guidance](https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines).
+
 ```
 
 BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2894)
